@@ -70,10 +70,13 @@ function Book(title, author, pages) {
         //validation
         if(title === '' || author === '' || pages === '') {
             //alert messages
-            ui.showAlert('Please fill the all form values', 'error')
+            ui.showAlert('Please fill the all form values', 'error');
         }else {
             //add book to the list
             ui.addBookToList(book);
+            
+            //show success message
+            ui.showAlert('Book added successfully!', 'success');
 
             //clear fields
             ui.clearFields();
