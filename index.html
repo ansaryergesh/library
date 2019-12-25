@@ -6,7 +6,7 @@
         <title>Book List</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY=" crossorigin="anonymous" />
     </head>
     <body>
@@ -27,9 +27,25 @@
                     <label for="pages">Pages</label>
                     <input type="text" id="page" class="u-full-width">
                 </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="u-full-width">
+                </div>
             </form>
+            
+            <table class="u-full-width">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="book-list"></tbody>
+            </table>
         </div>
         
-        <script src="" async defer></script>
+        <script src="app.js"></script>
     </body>
 </html>
