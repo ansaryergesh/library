@@ -72,7 +72,7 @@ class Store {
             const ui = new UI;
 
             ui.addBookToList(book);
-        })
+        });
     };
 
     static addBook(book) {
@@ -83,8 +83,17 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static removeBook() {
+    static removeBook(pages) {
+        const books = Store.getBooks();
+        books.forEach(function(book, index){
+            if(book.pages === pages){
+                books.splice(index, 1);
 
+            }
+        });
+
+        localStorage.setItem('books', JSON.stringify(books));
+         
     }
 }
 
@@ -141,6 +150,9 @@ const ui = new UI();
 ui.showAlert('book removed', 'success'); 
 
 ui.deleteBook(e.target);
+
+//remove from LS
+Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
 e.preventDefault();
 });
