@@ -28,6 +28,22 @@ function Book(title, author, pages) {
     list.appendChild(row);
  }
 
+ //Show alert
+ UI.prototype.showAlert = function(message, className) {
+     const div = document.createElement('div');
+     div.className = `alert ${className}`;
+     div.appendChild(document.createTextNode(message));
+     const container  = document.querySelector('.container');
+     const form  = document.querySelector('#book-form');
+
+     container.insertBefore(div, form);
+
+     //timeout for message
+     setTimeout(() => {
+         document.querySelector('.alert').remove();
+     }, 3000);
+ }
+
  //clear fields
 
  UI.prototype.clearFields = function() {
@@ -51,11 +67,19 @@ function Book(title, author, pages) {
         //instantiate ui
         const ui = new UI();
 
-        //add book to the list
-        ui.addBookToList(book);
+        //validation
+        if(title === '' || author === '' || pages === '') {
+            //alert messages
+            ui.showAlert('Please fill the all form values', 'error')
+        }else {
+            //add book to the list
+            ui.addBookToList(book);
 
-        //clear fields
-        ui.clearFields();
+            //clear fields
+            ui.clearFields();
+        }
+
+    
 
         e.preventDefault();
     }
