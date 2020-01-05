@@ -1,8 +1,9 @@
 class Book {
-    constructor(title,author,pages) {
+    constructor(title,author,pages,status = 'Unread') {
         this.title = title;
         this.author = author;
         this.pages = pages;
+        this.status = status;
     }
 }
 
@@ -18,6 +19,7 @@ class UI {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>
+            <td>${book.status}</td>
             <td><a href="#" class = "delete">X</a></td>
         `;
     
@@ -83,10 +85,10 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static removeBook(pages) {
+    static removeBook(status) {
         const books = Store.getBooks();
         books.forEach(function(book, index){
-            if(book.pages === pages){
+            if(book.status === status){
                 books.splice(index, 1);
 
             }
@@ -106,10 +108,11 @@ function(e){
     //Get form values
     const title = document.getElementById('title').value, 
           author = document.getElementById('author').value,
-          pages = document.getElementById('pages').value
+          pages = document.getElementById('pages').value,
+          status = document.getElementById('status').value
     
     //instantiate book
-    const book = new Book(title,author, pages);       
+    const book = new Book(title,author, pages, status);       
 
 
     //instantiate ui
