@@ -61,3 +61,12 @@
     opacity: 1;
     pointer-events: all;
 }
+
+.delete {
+    text-decoration: none;
+    color:red;
+    border: 1px solid black;
+    padding: 1.5px 5px;
+    border-radius: 80%;
+    background-color: wheat;
+}

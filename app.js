@@ -1,3 +1,4 @@
+// //pop up function
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -6,6 +7,7 @@ openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget)
         openModal(modal)
+        ui.clearFields()
     })
 })
 
@@ -29,6 +31,8 @@ function closeModal(modal) {
 }
 
 
+
+//add delete functions
 class Book {
     constructor(title,author,pages,status = 'Unread') {
         this.title = title;
@@ -117,24 +121,23 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    // static removeBook(status) {
-    //     const books = Store.getBooks();
-    //     books.forEach(function(book, index){
-    //         if(book.status === status){
-    //             books.splice(index, 1);
+    static removeBook(status) {
+        const books = Store.getBooks();
+        books.forEach(function(book, index){
+            if(book.status === status){
+                books.splice(index, 1);
 
-    //         }
-    //     });
+            }
+        });
 
-    //     localStorage.setItem('books', JSON.stringify(books));
-         
-    // }
-
-    static removeBook = (bookIndex) => {
-        books.splice(bookIndex, 1);
-        
         localStorage.setItem('books', JSON.stringify(books));
+         
     }
+    // static removeBook = (bookIndex) => {
+    //     books.splice(bookIndex, 1);
+        
+    //     localStorage.setItem('books', JSON.stringify(books));
+    // }
 }
 
 //DOM Load Event
@@ -193,7 +196,7 @@ ui.showAlert('book removed', 'success');
 ui.deleteBook(e.target);
 
 //remove from LS
-Store.removeBook(e.target.bookIndex);
+Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
 e.preventDefault();
 });
