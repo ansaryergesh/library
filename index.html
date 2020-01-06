@@ -9,7 +9,8 @@
   <title>Book List</title>
 </head>
 <body>
-  <div class="container">
+  <button data-modal-target="#modal" class="add-btn">+</button>
+  <div class="form-block" id="modal">
     <h1>Add Book</h1>
     <form id="book-form">
       <div>
@@ -33,9 +34,16 @@
         <input type="text" id="pages" class="u-full-width">
       </div>
       <div>
-        <input type="submit" value="Submit" class="u-full-width">
+        <input type="submit" value="Submit" class="u-full-width btn-submit">
+      </div>
+      <div>
+        <button data-close-button class="u-full-width btn-cancel"> Cancel </button>
       </div>
     </form>
+  
+  </div>
+  <div id="overlay"></div>
+  <div class="container result-block">
     <table class="u-full-width">
       <thead>
         <tr>
@@ -50,7 +58,6 @@
       <tbody id="book-list"></tbody>
     </table>
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>

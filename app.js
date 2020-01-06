@@ -1,3 +1,34 @@
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.form-block')
+        closeModal(modal)
+    })
+})
+
+function openModal(modal) {
+    if(modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if(modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+
 class Book {
     constructor(title,author,pages,status = 'Unread') {
         this.title = title;
@@ -51,6 +82,7 @@ class UI {
         document.getElementById('title').value = '';
         document.getElementById('author').value = '';
         document.getElementById('pages').value = '';
+        document.getElementById('status').value = 'Unread';
     }
 }
 
@@ -85,17 +117,23 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static removeBook(status) {
-        const books = Store.getBooks();
-        books.forEach(function(book, index){
-            if(book.status === status){
-                books.splice(index, 1);
+    // static removeBook(status) {
+    //     const books = Store.getBooks();
+    //     books.forEach(function(book, index){
+    //         if(book.status === status){
+    //             books.splice(index, 1);
 
-            }
-        });
+    //         }
+    //     });
 
-        localStorage.setItem('books', JSON.stringify(books));
+    //     localStorage.setItem('books', JSON.stringify(books));
          
+    // }
+
+    static removeBook = (bookIndex) => {
+        books.splice(bookIndex, 1);
+        
+        localStorage.setItem('books', JSON.stringify(books));
     }
 }
 
@@ -155,7 +193,7 @@ ui.showAlert('book removed', 'success');
 ui.deleteBook(e.target);
 
 //remove from LS
-Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+Store.removeBook(e.target.bookIndex);
 
 e.preventDefault();
 });
