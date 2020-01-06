@@ -8,6 +8,7 @@ openModalButtons.forEach(button => {
         const modal = document.querySelector(button.dataset.modalTarget)
         openModal(modal)
         ui.clearFields()
+        
     })
 })
 
@@ -121,7 +122,17 @@ class Store {
         localStorage.setItem('books', JSON.stringify(books));
     }
 
-    static removeBook(status) {
+    static delteBookListener = () => {
+        const deleteButtons = Array.from(document.getElementsByClassName('delete'));
+        deleteButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            deleteBookFromLibrary(button.id);
+            render();
+          });
+        });
+      };
+
+      static removeBook(status) {
         const books = Store.getBooks();
         books.forEach(function(book, index){
             if(book.status === status){
