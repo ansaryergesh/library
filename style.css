@@ -12,6 +12,15 @@
     background: red;
 }
 
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
 .add-btn {
     border-radius: 80%;
     position: fixed;
