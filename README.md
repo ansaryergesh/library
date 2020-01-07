@@ -2,7 +2,7 @@
 
 > Project taked from Microverse Curriculum from the The Odin Page project site.
 
-![screenshot]()
+![screenshot](./index2.png)
 
 Javascript with Webpack project from The Odin Project [curriculum](https://www.theodinproject.com/lessons/restaurant-page)
 
