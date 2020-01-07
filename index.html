@@ -27,8 +27,32 @@
         <select id="status" >
             <option value="Unread" class="status">Unread</option>
             <option value="Read" class="status">Read</option>
-        </select>
-        
+          </select>
+        </div>
+        <div>
+          <label for="pages">Pages</label>
+          <input
+            type="text"
+            id="pages"
+            class="u-full-width"
+            required=""
+            aria-required="true"
+          />
+        </div>
+        <div>
+          <input
+            data-close-submit
+            type="submit"
+            value="Submit"
+            class="u-full-width btn-submit"
+          />
+        </div>
+        <div>
+          <button data-close-button class="u-full-width btn-cancel">
+            Cancel
+          </button>
+        </div>
+      </form>
     </div>
       <div>
         <label for="pages">Pages</label>
@@ -62,3 +86,4 @@
   <script src="js/app.js"></script>
 </body>
 </html>
+
