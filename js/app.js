@@ -110,11 +110,6 @@ class UI {
     }
 }
 
-// Book.prototype.statusChange = function statusChange() {
-//     this.status = this.status === 'Unread' ? 'Read' : 'Unread';
-
-//     localStorage.setItem('books', JSON.stringify(books));
-// }
 
 //local storage
 class Store {
@@ -247,7 +242,4 @@ document.getElementById('book-list').addEventListener
            Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent)
        }
    }
-    // Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent);
-
-    // e.preventDefault();
 });
