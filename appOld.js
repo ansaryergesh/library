@@ -1,62 +1,44 @@
- //Book constructor
- function Book(title,author,pages) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+function Book(title, author, pages) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
 }
 
- //UI constructor
- function UI() {
-     
- }
+function UI() {}
 
- //add book to the list 
- UI.prototype.addBookToList  = function() {
-    const list = document.getElementById('book-list');
+UI.prototype.addBookToList = function() {
+  const list = document.getElementById('book-list');
 
-    //create tr element
-    const row = document.createElement('tr');
-    //insert cols
+  const row = document.createElement('tr');
 
-    row.innerHTML = `
+  row.innerHTML = `
         <td>${book.title}</td>
         <td>${book.author}</td>
         <td>${book.pages}</td>
         <td><a href="#" class = "delete">X</a></td>
     `;
 
-    list.appendChild(row);
- }
+  list.appendChild(row);
+};
 
- //clear fields
+UI.prototype.clearFields = function() {
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('pages').value = '';
+};
 
- UI.prototype.clearFields = function() {
-     document.getElementById('title').value = '';
-     document.getElementById('author').value = '';
-     document.getElementById('pages').value = '';
- }
+document.getElementById('book-form').addEventListener('submit', function(e) {
+  const title = document.getElementById('title').value,
+    author = document.getElementById('author').value,
+    pages = document.getElementById('pages').value;
 
- //event listeners
- document.getElementById('book-form').addEventListener('submit',
-    function(e){
-        //Get form values
-        const title = document.getElementById('title').value, 
-              author = document.getElementById('author').value,
-              pages = document.getElementById('pages').value
-        
-        //instantiate book
-        const book = new Book(title,author, pages);       
+  const book = new Book(title, author, pages);
 
+  const ui = new UI();
 
-        //instantiate ui
-        const ui = new UI();
+  ui.addBookToList(book);
 
-        //add book to the list
-        ui.addBookToList(book);
+  ui.clearFields();
 
-        //clear fields
-        ui.clearFields();
-
-        e.preventDefault();
-    }
- );
+  e.preventDefault();
+});
