@@ -14,19 +14,21 @@ Javascript with Webpack project from The Odin Project [curriculum](https://www.t
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://ansaryergesh.github.io/library/)
 
 ## Getting Started
 
 -To start to use this proyect download this repository to your computer and descompress all the files and open your terminal from the containing folder and run the commands published below on prerequisites section.
-
-### Prerequisites
 
 ### Setup
 
 To use this project you will need to download this repository and put in on your computer.
 
 ### Deployment
+
+steps to run the webpage on the browser:
+
+- open the index.html file with any browser
 
 ## Authors
 
@@ -60,7 +62,8 @@ This page was inspired by my own bussines i'm a food-seller on my free times whi
 
 This project is [MIT](lic.url) licensed.
 
-### Author:
+### Authors:
 
-[Ansar Yergeshov](https://github.com/ansaryergesh)
-[Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
+- [Ansar Yergeshov](https://github.com/ansaryergesh)
+
+- [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
