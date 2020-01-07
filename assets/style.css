@@ -187,3 +187,7 @@ header {
   border-radius: 80%;
   background-color: wheat;
 }
+.cover-image {
+  width: 100px;
+  height: auto;
+}
