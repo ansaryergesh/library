@@ -66,7 +66,7 @@ class UI {
     //insert cols
 
     row.innerHTML = `
-            <td><img class='img-table' src='https://kbimages1-a.akamaihd.net/87de68f8-ba0e-4236-88b0-402700d22168/1200/1200/False/harry-potter-y-la-camara-secreta-1.jpg'></img></td>
+            <td><img class='img-table' src='https://static.thenounproject.com/png/111370-200.png'></img></td>
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>

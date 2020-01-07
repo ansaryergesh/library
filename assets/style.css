@@ -23,7 +23,7 @@ header {
   color: white;
 }
 .add-btn {
-  border-radius: 80%;
+  border-radius: 85%;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -31,6 +31,13 @@ header {
   color: white;
   border: none;
   cursor: pointer;
+  font-size: 45px;
+  width: 50px;
+  padding: 0;
+  width: 59px;
+  height: 51px;
+  text-align: center;
+  margin: 20px;
 }
 
 .btn-submit {
