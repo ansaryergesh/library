@@ -74,8 +74,9 @@ class UI {
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>
-            <td>${book.status}</td>
+            <td><button  class = "done">${book.status}</button></td>
             <td><a href="#" class = "delete">X</a></td>
+           
         `;
     
         list.appendChild(row);
@@ -107,6 +108,12 @@ class UI {
         document.getElementById('author').value = '';
         document.getElementById('pages').value = '';
     }
+}
+
+Book.prototype.statusChange = function statusChange() {
+    this.status = this.status === 'Unread' ? 'Read' : 'Unread';
+
+    localStorage.setItem('books', JSON.stringify(books));
 }
 
 //local storage
@@ -153,12 +160,22 @@ class Store {
          
     }
 
+
+    static updateStatus = (status, title) => {
+        // status = document.getElementById('status').value
+        const books = Store.getBooks();
+        books.forEach(book=>{
+           if(book.title === title) book.status = status
+        })
+
+        localStorage.setItem('books', JSON.stringify(books))
+    }
+
+   
     
 }
 
-// function deleteBookFromLibrary(index) {
-//     books.splice(index, 1);
-//   }
+
 //DOM Load Event
 document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
@@ -209,13 +226,29 @@ document.getElementById('book-list').addEventListener
 
     const ui = new UI();
     
-    //show message about deletion
-    ui.showAlert('book removed', 'success'); 
-    
     ui.deleteBook(e.target);
     
     //remove from LS
     Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     
+    e.preventDefault();
+});
+
+
+// Event for update status
+document.getElementById('book-list').addEventListener
+('click', function(e) {
+   if(e.target.className === "done") {
+       if(e.target.textContent == 'Read') {
+           e.target.textContent = 'Unread'
+           Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent)
+       }
+       else {
+           e.target.textContent = 'Read'
+           Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent)
+       }
+   }
+    Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].    textContent);
+
     e.preventDefault();
 });

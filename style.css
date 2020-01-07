@@ -12,6 +12,11 @@
     background: red;
 }
 
+.update-status {
+    color: black;
+}
+
+
 header {
     text-align: center;
     padding: 20px 0;
@@ -78,4 +83,17 @@ header {
     padding: 1.5px 5px;
     border-radius: 80%;
     background-color: wheat;
+}
+
+.done {
+    text-decoration: none;
+    padding: 2.5px 3px;
+    background-color: rgb(10, 93, 247);
+    color: rgb(255, 255, 255);
+    width: 80px;
+}
+
+.done:hover {
+    background-color: cornsilk;
+    color: black;
 }
