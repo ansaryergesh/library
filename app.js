@@ -110,11 +110,11 @@ class UI {
     }
 }
 
-Book.prototype.statusChange = function statusChange() {
-    this.status = this.status === 'Unread' ? 'Read' : 'Unread';
+// Book.prototype.statusChange = function statusChange() {
+//     this.status = this.status === 'Unread' ? 'Read' : 'Unread';
 
-    localStorage.setItem('books', JSON.stringify(books));
-}
+//     localStorage.setItem('books', JSON.stringify(books));
+// }
 
 //local storage
 class Store {
@@ -162,14 +162,13 @@ class Store {
 
 
     static updateStatus = (status, title) => {
-        // status = document.getElementById('status').value
         const books = Store.getBooks();
         books.forEach(book=>{
            if(book.title === title) book.status = status
         })
 
         localStorage.setItem('books', JSON.stringify(books))
-    }
+    }   
 
    
     
@@ -248,7 +247,7 @@ document.getElementById('book-list').addEventListener
            Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent)
        }
    }
-    Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].    textContent);
+    // Store.updateStatus(e.target.textContent, e.target.parentElement.children[0].textContent);
 
-    e.preventDefault();
+    // e.preventDefault();
 });
