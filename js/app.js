@@ -76,7 +76,6 @@ class UI {
             <td>${book.pages}</td>
             <td><button  class = "done">${book.status}</button></td>
             <td><a href="#" class = "delete">X</a></td>
-           
         `;
     
         list.appendChild(row);
@@ -109,7 +108,6 @@ class UI {
         document.getElementById('pages').value = '';
     }
 }
-
 
 //local storage
 class Store {
@@ -155,7 +153,6 @@ class Store {
          
     }
 
-
     static updateStatus = (status, title) => {
         const books = Store.getBooks();
         books.forEach(book=>{
@@ -168,7 +165,6 @@ class Store {
    
     
 }
-
 
 //DOM Load Event
 document.addEventListener('DOMContentLoaded', Store.displayBooks);
@@ -243,3 +239,4 @@ document.getElementById('book-list').addEventListener
        }
    }
 });
+
