@@ -1,5 +1,4 @@
-
-#   Library Project
+# Library Project
 
 > Project taked from Microverse Curriculum from the The Odin Page project site.
 
@@ -7,12 +6,11 @@
 
 Javascript with Webpack project from The Odin Project [curriculum](https://www.theodinproject.com/lessons/restaurant-page)
 
-
-## Built With Javascript and Webpack
+## Built With Javascript
 
 - Html
--Css
--JavaScript
+  -Css
+  -JavaScript
 
 ## Live Demo
 
@@ -20,17 +18,15 @@ Javascript with Webpack project from The Odin Project [curriculum](https://www.t
 
 ## Getting Started
 
--To start to  use this proyect download this repository to your computer and descompress all  the files and open your terminal from the containing folder and run the commands published below on prerequisites section.
+-To start to use this proyect download this repository to your computer and descompress all the files and open your terminal from the containing folder and run the commands published below on prerequisites section.
 
 ### Prerequisites
-
 
 ### Setup
 
 To use this project you will need to download this repository and put in on your computer.
 
 ### Deployment
-
 
 ## Authors
 
@@ -40,8 +36,7 @@ To use this project you will need to download this repository and put in on your
 - Twitter: [@ansaryergesh](https://twitter.com/ansaryergesh)
 - Linkedin: [Ansar Yergeshov](https://www.linkedin.com/in/ansaryergesh/)
 
-
-👤 **Cristian Ines Hernandez A.  - MephistoDevelop**
+👤 **Cristian Ines Hernandez A. - MephistoDevelop**
 
 - Github: [@MephistoDevelop](https://github.com/MephistoDevelop)
 - Twitter: [@MephistoDevelop](https://twitter.com/MephistoDevelop)
@@ -65,10 +60,7 @@ This page was inspired by my own bussines i'm a food-seller on my free times whi
 
 This project is [MIT](lic.url) licensed.
 
-
-
 ### Author:
+
 [Ansar Yergeshov](https://github.com/ansaryergesh)
 [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
-
-
