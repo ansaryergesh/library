@@ -1,0 +1,23 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "Repository to save simple library project",
+  "main": "index.js",
+  "dependencies": {
+    "babel-eslint": "^10.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansaryergesh/library.git"
+  },
+  "author": "MephistoDevelop <inesherald@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansaryergesh/library/issues"
+  },
+  "homepage": "https://github.com/ansaryergesh/library#readme"
+}
