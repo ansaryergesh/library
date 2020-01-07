@@ -1,4 +1,3 @@
-// //pop up function
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const closeModalSubmit = document.querySelectorAll('[data-close-submit]');
@@ -61,9 +60,7 @@ class UI {
   addBookToList(book) {
     const list = document.getElementById('book-list');
 
-    //create tr element
     const row = document.createElement('tr');
-    //insert cols
 
     row.innerHTML = `
             <td>${book.title}</td>
@@ -85,7 +82,6 @@ class UI {
 
     container.insertBefore(div, form);
 
-    //timeout for message
     setTimeout(() => {
       document.querySelector('.alert').remove();
     }, 3000);
@@ -104,7 +100,6 @@ class UI {
   }
 }
 
-//local storage
 class Store {
   static getBooks() {
     let books;
@@ -156,57 +151,43 @@ class Store {
   };
 }
 
-//DOM Load Event
 document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
-//event listener for adding book
 document.getElementById('book-form').addEventListener('submit', function(e) {
-  //Get form values
   const title = document.getElementById('title').value,
     author = document.getElementById('author').value,
     pages = document.getElementById('pages').value,
     status = document.getElementById('status').value;
 
-  //instantiate book
   const book = new Book(title, author, pages, status);
 
-  //instantiate ui
   const ui = new UI();
 
-  //validation
   if (title === '' || author === '' || pages === '') {
-    //alert messages
     ui.showAlert('Please fill the all form values', 'error');
   } else {
-    //add book to the list
     ui.addBookToList(book);
 
-    // add to the storage
     Store.addBook(book);
 
-    //show success message
     ui.showAlert('Book added successfully!', 'success');
 
-    //clear fields
     ui.clearFields();
   }
 
   e.preventDefault();
 });
 
-// Event listener for deletion
 document.getElementById('book-list').addEventListener('click', function(e) {
   const ui = new UI();
 
   ui.deleteBook(e.target);
 
-  //remove from LS
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
   e.preventDefault();
 });
 
-// Event for update status
 document.getElementById('book-list').addEventListener('click', function(e) {
   if (e.target.className === 'done') {
     if (e.target.textContent == 'Read') {
