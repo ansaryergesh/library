@@ -48,11 +48,18 @@ function closeSubmit(modal) {
 }
 
 class Book {
-  constructor(title, author, pages, status = 'Unread') {
+  constructor(
+    title,
+    author,
+    pages,
+    status = 'Unread',
+    cover = 'https://static.thenounproject.com/png/132226-200.png'
+  ) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.status = status;
+    this.cover = cover;
   }
 }
 
@@ -63,6 +70,10 @@ class UI {
     const row = document.createElement('tr');
 
     row.innerHTML = `
+            <td><img src='${book.cover ||
+              'https://static.thenounproject.com/png/132226-200.png'}' alt='Image-${
+      book.title
+    }' class='cover-image'></td>
             <td>${book.title}</td>
             <td>${book.author}</td>
             <td>${book.pages}</td>
@@ -97,6 +108,7 @@ class UI {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
     document.getElementById('pages').value = '';
+    document.getElementById('cover').value = '';
   }
 }
 
@@ -157,9 +169,10 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
   const title = document.getElementById('title').value,
     author = document.getElementById('author').value,
     pages = document.getElementById('pages').value,
+    cover = document.getElementById('cover').value,
     status = document.getElementById('status').value;
 
-  const book = new Book(title, author, pages, status);
+  const book = new Book(title, author, pages, status, cover);
 
   const ui = new UI();
 
