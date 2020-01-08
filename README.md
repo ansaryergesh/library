@@ -9,12 +9,12 @@ Javascript with Webpack project from The Odin Project [curriculum](https://www.t
 ## Built With Javascript
 
 - Html
-  -Css
-  -JavaScript
+- Css
+- JavaScript
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://ansaryergesh.github.io/library/)
 
 ## Getting Started
 
