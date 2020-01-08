@@ -23,11 +23,11 @@ header {
   color: white;
 }
 .add-btn {
-  border-radius: 85%;
+  border-radius: 50%;
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: teal;
+  background-color: rgb(121, 113, 234, 0.4);
   color: white;
   border: none;
   cursor: pointer;
@@ -55,7 +55,7 @@ header {
   z-index: 999;
   width: 500px;
   max-width: 80%;
-  background-color: rgb(216, 212, 212);
+  background-color: rgba(57, 62, 70, 0.5);
   padding: 10px;
 }
 
@@ -70,7 +70,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(236, 187, 159);
+  background-color: rgb(121, 113, 234);
   pointer-events: none;
 }
 
@@ -138,6 +138,12 @@ header {
   color: white;
   border: none;
   cursor: pointer;
+  transition: ease-in 0.5s;
+}
+.add-btn:hover {
+  background-color: rgb(10, 93, 247);
+  color: wheat;
+  transition: ease-in 0.5s;
 }
 
 .btn-submit {
@@ -170,7 +176,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(236, 187, 159);
+  background-color: rgb(121, 113, 234, 0.4);
   pointer-events: none;
 }
 
