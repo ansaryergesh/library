@@ -26,13 +26,9 @@ To use this project you will need to download this repository and save in your c
 
 ### Deployment
 
-<<<<<<< HEAD
-steps to run the webpage on the browser:
+  steps to run the webpage on the browser:
 
 - open the index.html file with any browser
-=======
-- only open the index.html file on Chrome browser.
->>>>>>> f5bc5add48878df7aab7277946f23a56e2e8f911
 
 ## Authors
 
