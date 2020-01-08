@@ -66,8 +66,4 @@ This project is [MIT](lic.url) licensed.
 
 - [Ansar Yergeshov](https://github.com/ansaryergesh)
 
-<<<<<<< HEAD
-=======
-- [Ansar Yergeshov](https://github.com/ansaryergesh)
->>>>>>> f5bc5add48878df7aab7277946f23a56e2e8f911
 - [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
