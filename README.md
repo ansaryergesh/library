@@ -2,15 +2,15 @@
 
 > Project taked from Microverse Curriculum from the The Odin Page project site.
 
-![screenshot]()
+![screenshot](./screenshot.gif)
 
 Javascript with Webpack project from The Odin Project [curriculum](https://www.theodinproject.com/lessons/restaurant-page)
 
 ## Built With Javascript
 
 - Html
-  -Css
-  -JavaScript
+- Css
+- JavaScript
 
 ## Live Demo
 
@@ -18,17 +18,21 @@ Javascript with Webpack project from The Odin Project [curriculum](https://www.t
 
 ## Getting Started
 
--To start to use this proyect download this repository to your computer and descompress all the files and open your terminal from the containing folder and run the commands published below on prerequisites section.
+-To start to use this proyect download this repository to your computer and descompress all the files, after open your terminal from the containing folder and open the index.html file on Google Chrome browser.
 
 ### Setup
 
-To use this project you will need to download this repository and put in on your computer.
+To use this project you will need to download this repository and save in your computer.
 
 ### Deployment
 
+<<<<<<< HEAD
 steps to run the webpage on the browser:
 
 - open the index.html file with any browser
+=======
+- only open the index.html file on Chrome browser.
+>>>>>>> f5bc5add48878df7aab7277946f23a56e2e8f911
 
 ## Authors
 
@@ -66,4 +70,8 @@ This project is [MIT](lic.url) licensed.
 
 - [Ansar Yergeshov](https://github.com/ansaryergesh)
 
+<<<<<<< HEAD
+=======
+- [Ansar Yergeshov](https://github.com/ansaryergesh)
+>>>>>>> f5bc5add48878df7aab7277946f23a56e2e8f911
 - [Cristian Ines (MephistoDevelop)](https://github.com/MephistoDevelop)
