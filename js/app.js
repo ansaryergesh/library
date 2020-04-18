@@ -40,7 +40,8 @@ function closeModal(modal) {
 function closeSubmit(modal) {
   if (modal == null) return;
   setTimeout(() => {
-    modal.classList.remove('active');
+    model.classList.remove('active')
+    overlay.classList.remove('active');
   }, 1500);
 }
 
