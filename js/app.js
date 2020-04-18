@@ -42,9 +42,6 @@ function closeSubmit(modal) {
   setTimeout(() => {
     modal.classList.remove('active');
   }, 1500);
-  setTimeout(() => {
-    overlay.classList.remove('active');
-  }, 1800);
 }
 
 class Book {
