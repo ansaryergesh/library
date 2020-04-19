@@ -1,7 +1,7 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
-
+const savebook = (books) => { localStorage.setItem('books', JSON.stringify(books));}
 openModalButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget);
@@ -118,8 +118,7 @@ class Store {
     const books = Store.getBooks();
 
     books.push(book);
-
-    localStorage.setItem('books', JSON.stringify(books));
+    savebook(books);
   }
 
   static removeBook(status) {
@@ -130,7 +129,7 @@ class Store {
       }
     });
 
-    localStorage.setItem('books', JSON.stringify(books));
+    savebook(books);
   }
 
   updateStatus = (status, title) => {
@@ -139,7 +138,7 @@ class Store {
       if (book.title === title) book.status = status;
     });
 
-    localStorage.setItem('books', JSON.stringify(books));
+    savebook(books);
   };
 }
 
@@ -166,7 +165,7 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
     ui.showAlert('Book added successfully!', 'success');
 
     ui.clearFields();
-    const modal = button.closest('.form-block');
+    const modal = document.querySelector('.form-block');
     closeModal(modal);
   }
 
