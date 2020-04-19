@@ -1,13 +1,11 @@
 const openModalButtons = document.querySelectorAll('[data-modal-target]');
 const closeModalButtons = document.querySelectorAll('[data-close-button]');
-const closeModalSubmit = document.querySelectorAll('[data-close-submit]');
 const overlay = document.getElementById('overlay');
 
 openModalButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const modal = document.querySelector(button.dataset.modalTarget);
     openModal(modal);
-    ui.clearFields();
   });
 });
 
@@ -15,13 +13,6 @@ closeModalButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const modal = button.closest('.form-block');
     closeModal(modal);
-  });
-});
-
-closeModalSubmit.forEach((button) => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.form-block');
-    closeSubmit(modal);
   });
 });
 
@@ -35,14 +26,6 @@ function closeModal(modal) {
   if (modal == null) return;
   modal.classList.remove('active');
   overlay.classList.remove('active');
-}
-
-function closeSubmit(modal) {
-  if (modal == null) return;
-  setTimeout(() => {
-    model.classList.remove('active')
-    overlay.classList.remove('active');
-  }, 1500);
 }
 
 class Book {
@@ -118,7 +101,6 @@ class Store {
     } else {
       books = JSON.parse(localStorage.getItem('books'));
     }
-
     return books;
   }
 
@@ -184,6 +166,8 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
     ui.showAlert('Book added successfully!', 'success');
 
     ui.clearFields();
+    const modal = button.closest('.form-block');
+    closeModal(modal);
   }
 
   e.preventDefault();
@@ -191,11 +175,8 @@ document.getElementById('book-form').addEventListener('submit', function(e) {
 
 document.getElementById('book-list').addEventListener('click', function(e) {
   const ui = new UI();
-
   ui.deleteBook(e.target);
-
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-
   e.preventDefault();
 });
 
